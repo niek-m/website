@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STAALFORM — Metaalbewerking &amp; plaatwerk op maat voor de industrie</title>
+<meta name="description" content="Van dakventilator tot dakschelp, van serieproduct tot prototype. Plaatbewerking en maatwerk in metaal voor bouw, industrie en installatie. Plan direct een afspraak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#hoofd">Naar hoofdinhoud</a>
+
+<header class="topbar" id="top">
+  <div class="topbar__inner container">
+    <a href="#top" class="wordmark" aria-label="STAALFORM home">
+      <svg class="wordmark__mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="8" fill="var(--ink)"/>
+        <path d="M10 28 L20 12 L30 28 Z" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="20" cy="22" r="2.5" fill="var(--accent)"/>
+      </svg>
+      <span>STAAL<span class="wordmark__thin">FORM</span></span>
+    </a>
+    <nav class="topbar__nav" aria-label="Hoofdmenu">
+      <a href="#oplossingen">Oplossingen</a>
+      <a href="#capaciteit">Capaciteit</a>
+      <a href="#sectoren">Sectoren</a>
+      <a href="#proces">Proces</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="topbar__actions">
+      <a href="tel:+31000000000" class="phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        010 - 000 00 00
+      </a>
+      <a href="#afspraak" class="btn btn--solid">Plan een afspraak →</a>
+    </div>
+    <button class="menu" aria-label="Menu openen" aria-controls="mob" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mob" class="mob" hidden>
+    <a href="#oplossingen">Oplossingen</a>
+    <a href="#capaciteit">Capaciteit</a>
+    <a href="#sectoren">Sectoren</a>
+    <a href="#proces">Proces</a>
+    <a href="#faq">FAQ</a>
+    <a href="#afspraak" class="btn btn--solid">Plan een afspraak</a>
+  </div>
+</header>
+
+<main id="hoofd">
+
+  <!-- ==================== HERO / MARQUEE ==================== -->
+  <section class="hero">
+    <div class="container hero__grid">
+
+      <div class="hero__copy">
+        <p class="kicker">
+          <span class="pulse"></span>
+          Plaatbewerking · Rotterdam · sinds 1996
+        </p>
+        <h1 class="display">
+          Metaal dat<br>
+          <em>meedenkt</em><br>
+          met jouw product.
+        </h1>
+        <p class="hero__lede">
+          Van <strong>dakventilator</strong> tot <strong>dakschelp</strong>, van
+          eerste prototype tot serieproductie van tienduizenden. Wij trekken
+          diep, zetten scherp en lassen strak — precies zoals jouw tekening
+          het bedoelt.
+        </p>
+        <div class="hero__cta">
+          <a href="#afspraak" class="btn btn--solid btn--lg">
+            Plan een kennismaking
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#oplossingen" class="btn btn--outline btn--lg">Zie oplossingen</a>
+        </div>
+
+        <dl class="badges">
+          <div><dt>&lt;24u</dt><dd>reactie op je tekening</dd></div>
+          <div><dt>1</dt><dd>vast aanspreekpunt</dd></div>
+          <div><dt>0,5–8</dt><dd>mm plaatdikte</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="blueprint">
+          <svg viewBox="0 0 400 500" class="blueprint__svg">
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width=".4" opacity=".35"/>
+              </pattern>
+              <linearGradient id="steel" x1="0" x2="1">
+                <stop offset="0"    stop-color="#2c2c2f"/>
+                <stop offset=".45"  stop-color="#8a8f96"/>
+                <stop offset=".55"  stop-color="#c8ccd2"/>
+                <stop offset="1"    stop-color="#3a3d43"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#grid)"/>
+            <!-- Exploded dak-ventilator drawing -->
+            <g class="bp__part bp__part--1">
+              <ellipse cx="200" cy="90" rx="120" ry="26" fill="url(#steel)" stroke="var(--ink)" stroke-width="1.2"/>
+              <ellipse cx="200" cy="82" rx="120" ry="26" fill="none" stroke="var(--ink)" stroke-width="1"/>
+              <text x="330" y="88" class="bp__note">kap</text>
+              <line x1="200" y1="105" x2="200" y2="150" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/>
+            </g>
+            <g class="bp__part bp__part--2">
+              <rect x="120" y="160" width="160" height="80" rx="4" fill="url(#steel)" stroke="var(--ink)"/>
+              <line x1="120" y1="200" x2="280" y2="200" stroke="var(--ink)" stroke-dasharray="3 3" opacity=".5"/>
+              <text x="290" y="205" class="bp__note">behuizing</text>
+              <line x1="200" y1="245" x2="200" y2="290" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/>
+            </g>
+            <g class="bp__part bp__part--3">
+              <circle cx="200" cy="330" r="55" fill="url(#steel)" stroke="var(--ink)"/>
+              <circle cx="200" cy="330" r="55" fill="none" stroke="var(--ink)" stroke-width=".5" opacity=".5"/>
+              <g stroke="var(--ink)" stroke-width="1.4" fill="none">
+                <path d="M200 285 C 220 315 220 345 200 375 C 180 345 180 315 200 285Z"/>
+                <path d="M245 330 C 215 350 185 350 155 330 C 185 310 215 310 245 330Z"/>
+              </g>
+              <text x="265" y="335" class="bp__note">rotor</text>
+              <line x1="200" y1="390" x2="200" y2="430" stroke="var(--ink)" stroke-dasharray="4 4" stroke-width="1"/>
+            </g>
+            <g class="bp__part bp__part--4">
+              <rect x="80" y="440" width="240" height="30" rx="3" fill="url(#steel)" stroke="var(--ink)"/>
+              <text x="330" y="460" class="bp__note">flens</text>
+            </g>
+            <!-- Dimensions -->
+            <g stroke="var(--accent)" stroke-width="1" fill="none">
+              <line x1="40" y1="70"  x2="40" y2="490"/>
+              <line x1="35" y1="70"  x2="45" y2="70"/>
+              <line x1="35" y1="490" x2="45" y2="490"/>
+            </g>
+            <text x="20" y="285" class="bp__dim">Ø420</text>
+          </svg>
+          <span class="blueprint__stamp">
+            <b>ONTW-2026-014</b>
+            <span>DAKVENTILATOR · RVS316</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Dakventilator</span><span>·</span>
+        <span>Dakschelp</span><span>·</span>
+        <span>Ophangbeugel</span><span>·</span>
+        <span>Machinebehuizing</span><span>·</span>
+        <span>Bolder</span><span>·</span>
+        <span>Rookkanaal</span><span>·</span>
+        <span>Kabeldoorvoer</span><span>·</span>
+        <span>Trechter</span><span>·</span>
+        <span>Kastwerk</span><span>·</span>
+        <span>Beugel</span><span>·</span>
+        <span>Dakventilator</span><span>·</span>
+        <span>Dakschelp</span><span>·</span>
+        <span>Ophangbeugel</span><span>·</span>
+        <span>Machinebehuizing</span><span>·</span>
+        <span>Bolder</span><span>·</span>
+        <span>Rookkanaal</span><span>·</span>
+        <span>Kabeldoorvoer</span><span>·</span>
+        <span>Trechter</span><span>·</span>
+        <span>Kastwerk</span><span>·</span>
+        <span>Beugel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OPLOSSINGEN ==================== -->
+  <section id="oplossingen" class="solutions">
+    <div class="container">
+      <div class="section__lead">
+        <p class="kicker kicker--dark">§ 01 · Oplossingen</p>
+        <h2>Wat we voor je maken.</h2>
+        <p class="lede">Elke maand rollen er honderden onderdelen van de vloer — geen twee hetzelfde. Een greep uit wat we het vaakst produceren:</p>
+      </div>
+
+      <div class="sol__grid">
+        <article class="sol">
+          <span class="sol__no">01</span>
+          <div class="sol__art">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <ellipse cx="50" cy="30" rx="34" ry="8"/>
+              <path d="M16 30 v12 a34 8 0 0 0 68 0 v-12"/>
+              <circle cx="50" cy="65" r="18"/>
+              <path d="M50 47 v36 M32 65 h36"/>
+            </svg>
+          </div>
+          <h3>Dakventilators</h3>
+          <p>RVS-kap, behuizing en rotor. In series voor grote pandenbouwers of maatwerk voor renovatie.</p>
+        </article>
+        <article class="sol">
+          <span class="sol__no">02</span>
+          <div class="sol__art">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10 70 Q 50 20 90 70 Z"/>
+              <path d="M10 70 Q 50 40 90 70"/>
+              <path d="M50 30 v40"/>
+            </svg>
+          </div>
+          <h3>Dakschelpen</h3>
+          <p>Weerbestendige metalen dakvormen die water afvoeren en er 30 jaar strak uit blijven zien.</p>
+        </article>
+        <article class="sol">
+          <span class="sol__no">03</span>
+          <div class="sol__art">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="15" y="35" width="70" height="35" rx="3"/>
+              <path d="M15 40 h70 M15 65 h70"/>
+              <circle cx="25" cy="52" r="2.5" fill="currentColor"/>
+              <circle cx="75" cy="52" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Machinebehuizingen</h3>
+          <p>Kasten en frames voor OEM-machines. Gepoedercoat of geborsteld — assemblage-ready.</p>
+        </article>
+        <article class="sol">
+          <span class="sol__no">04</span>
+          <div class="sol__art">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 20 L40 20 L40 60 L60 60 L60 80 L80 80"/>
+              <circle cx="30" cy="20" r="3.5"/>
+              <circle cx="70" cy="80" r="3.5"/>
+            </svg>
+          </div>
+          <h3>Ophangbeugels &amp; frames</h3>
+          <p>Van kabelbeugel tot draagconstructie: gelaserd, gezet en gelast in één keer.</p>
+        </article>
+        <article class="sol">
+          <span class="sol__no">05</span>
+          <div class="sol__art">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 20 L80 20 L60 60 L60 80 L40 80 L40 60 Z"/>
+            </svg>
+          </div>
+          <h3>Trechters &amp; koeling</h3>
+          <p>Complexe kegelvormen, ook uit dun materiaal. Dieptrekken tot 8 mm.</p>
+        </article>
+        <article class="sol">
+          <span class="sol__no">06</span>
+          <div class="sol__art">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15 60 h70"/>
+              <path d="M15 60 Q 50 20 85 60"/>
+              <path d="M22 60 v-4 M32 60 v-8 M42 60 v-12 M50 60 v-14 M58 60 v-12 M68 60 v-8 M78 60 v-4"/>
+            </svg>
+          </div>
+          <h3>Prototype &amp; nulserie</h3>
+          <p>Werkstuk in de hand binnen 10 werkdagen — sneller iteraties, veiliger investeringsbeslissingen.</p>
+        </article>
+      </div>
+
+      <p class="sol__foot">
+        Niet zeker of jouw product hier past? <a href="#afspraak">Stuur je tekening</a> — we bellen dezelfde dag terug.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== CAPACITEIT (donker) ==================== -->
+  <section id="capaciteit" class="capacity">
+    <div class="container">
+      <div class="section__lead section__lead--light">
+        <p class="kicker kicker--light">§ 02 · Capaciteit</p>
+        <h2>Alles wat je met plaat kunt doen — hier onder één dak.</h2>
+      </div>
+
+      <div class="cap__grid">
+        <div class="cap__list">
+          <ul>
+            <li><span>01</span> Fiberlaser tot 3&nbsp;m × 1,5&nbsp;m</li>
+            <li><span>02</span> Kantbank tot 4&nbsp;m · 320&nbsp;ton</li>
+            <li><span>03</span> Dieptrekpers tot 250&nbsp;ton</li>
+            <li><span>04</span> Excenter- &amp; hydraulische pers</li>
+            <li><span>05</span> Ponsmachine &amp; slitschaar</li>
+            <li><span>06</span> MIG · TIG · puntlassen</li>
+            <li><span>07</span> Ontbramen &amp; stralen</li>
+            <li><span>08</span> Poedercoat via partner</li>
+          </ul>
+        </div>
+        <aside class="cap__facts">
+          <div class="fact">
+            <span class="fact__k">Materialen</span>
+            <span class="fact__v">Staal · RVS 304/316 · aluminium · verzinkt · corten</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Series</span>
+            <span class="fact__v">1 stuk → 100.000+</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Tekeningen</span>
+            <span class="fact__v">STEP · DWG · DXF · PDF · IGES</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Levering</span>
+            <span class="fact__v">NL &amp; BE binnen 24u · EU op afspraak</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTOREN ==================== -->
+  <section id="sectoren" class="sectors">
+    <div class="container">
+      <div class="section__lead">
+        <p class="kicker kicker--dark">§ 03 · Sectoren</p>
+        <h2>Voor wie we werken.</h2>
+        <p class="lede">Overal waar er metaal in of aan een product zit, komen we ergens voorbij.</p>
+      </div>
+
+      <ul class="sectors__list" role="list">
+        <li>
+          <h3>Bouw &amp; installatie</h3>
+          <p>Dakventilators, dakschelpen, doorvoeren, dakbeugels — voor installatietechniek en aannemerij.</p>
+        </li>
+        <li>
+          <h3>Machinebouw &amp; OEM</h3>
+          <p>Behuizingen, frames, panelen en onderdelen op tekening. Ook in serie met logistieke afroep.</p>
+        </li>
+        <li>
+          <h3>Watersport &amp; scheepvaart</h3>
+          <p>RVS-bolders, luikringen en dekhardware. Bestand tegen zoutwater en jaren buiten.</p>
+        </li>
+        <li>
+          <h3>Voedsel &amp; farma</h3>
+          <p>Hygiënisch geëindigd RVS, spleetvrij gelast waar het moet.</p>
+        </li>
+        <li>
+          <h3>Retail &amp; interieur</h3>
+          <p>Zichtwerk in metaal — displays, meubels, gevelelementen.</p>
+        </li>
+        <li>
+          <h3>Energie &amp; utility</h3>
+          <p>Kabelgoten, aardingsdelen, kastwerk voor laadinfrastructuur.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== PROCES ==================== -->
+  <section id="proces" class="process">
+    <div class="container">
+      <div class="section__lead">
+        <p class="kicker kicker--dark">§ 04 · Proces</p>
+        <h2>Van eerste bel tot laatste dooskleur.</h2>
+      </div>
+
+      <div class="proc">
+        <div class="proc__rail" aria-hidden="true"></div>
+        <ol class="proc__steps">
+          <li>
+            <span class="proc__step">01</span>
+            <div>
+              <h3>Bel of stuur tekening</h3>
+              <p>Binnen 1 werkdag zit je met een engineer aan tafel of aan de telefoon. Geen offerte-formulier van 5 pagina's.</p>
+            </div>
+          </li>
+          <li>
+            <span class="proc__step">02</span>
+            <div>
+              <h3>Maakbaarheids-check</h3>
+              <p>We rekenen mee op materiaal, tolerantie en kostprijs. Vaak vinden we €5–15% besparing op de tekening.</p>
+            </div>
+          </li>
+          <li>
+            <span class="proc__step">03</span>
+            <div>
+              <h3>Offerte in dagen, niet weken</h3>
+              <p>Heldere prijs, duidelijke doorlooptijd, transparante meerprijzen als er wat verandert.</p>
+            </div>
+          </li>
+          <li>
+            <span class="proc__step">04</span>
+            <div>
+              <h3>Productie &amp; levering</h3>
+              <p>Eén vast aanspreekpunt, wekelijkse status, levering op locatie in NL/BE binnen 24 uur.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIAL ==================== -->
+  <section class="quote">
+    <div class="container">
+      <blockquote>
+        <p><em>“Ze denken mee alsof het hun eigen product is. In één iteratie hadden we het onderdeel goedkoper én sterker.”</em></p>
+        <footer>
+          <cite><strong>Mark Overbeek</strong> · Product Engineer, VentilCorp</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section__lead">
+        <p class="kicker kicker--dark">§ 05 · FAQ</p>
+        <h2>Voordat je belt.</h2>
+      </div>
+
+      <div class="faq__list">
+        <details>
+          <summary>Doen jullie ook eenmalige, kleine series?</summary>
+          <p>Ja — vanaf 1 stuk. We rekenen dan een insteltijd, maar geen minimumafname. Ideaal voor prototypes en jubileum-runs.</p>
+        </details>
+        <details>
+          <summary>Welke bestandsformaten kan ik aanleveren?</summary>
+          <p>STEP, DWG, DXF, IGES en PDF met maatvoering. Heb je alleen een schets? Ook goed — we maken samen de eerste tekening.</p>
+        </details>
+        <details>
+          <summary>Werken jullie ook met RVS voor zoutwater?</summary>
+          <p>Zeker. Voor buitentoepassingen adviseren we standaard 316 (marine grade). Bij kritische onderdelen 316L of duplex.</p>
+        </details>
+        <details>
+          <summary>Hoe snel is de eerste offerte binnen?</summary>
+          <p>Binnen 24 uur reageren we. Volledige offerte volgt meestal binnen 2–3 werkdagen, afhankelijk van complexiteit.</p>
+        </details>
+        <details>
+          <summary>Kunnen jullie ook assembleren en afwerken?</summary>
+          <p>Ja — samenbouw, ontbramen, stralen en (via partner) poedercoaten of anodiseren. Je krijgt je product klaar voor gebruik.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA / AFSPRAAK ==================== -->
+  <section id="afspraak" class="appt">
+    <div class="container appt__grid">
+      <div class="appt__pitch">
+        <p class="kicker kicker--light">§ 06 · Kennismaken</p>
+        <h2>15 minuten. Geen verplichtingen.</h2>
+        <p class="lede lede--light">
+          Vertel wat je maakt of moet maken. We geven direct feedback op maakbaarheid,
+          materiaal en indicatieve prijs. Als het klikt, plannen we een fabrieksbezoek.
+        </p>
+        <ul class="appt__perks">
+          <li>Direct met een engineer, niet een verkoper</li>
+          <li>Vrijblijvend advies op je tekening</li>
+          <li>Vast aanspreekpunt zodra we starten</li>
+        </ul>
+
+        <div class="appt__slots">
+          <p class="appt__label">Snel plannen:</p>
+          <div class="slots">
+            <button type="button" class="slot" data-slot="morgen 10:00">Morgen · 10:00</button>
+            <button type="button" class="slot" data-slot="morgen 14:00">Morgen · 14:00</button>
+            <button type="button" class="slot" data-slot="overmorgen 09:00">Overmorgen · 09:00</button>
+            <button type="button" class="slot" data-slot="overmorgen 15:30">Overmorgen · 15:30</button>
+            <button type="button" class="slot" data-slot="andere tijd">Andere tijd</button>
+          </div>
+        </div>
+      </div>
+
+      <form class="apptform" id="apptForm" novalidate>
+        <div class="apptform__hdr">
+          <span class="tag">Kennismaking</span>
+          <span class="tag tag--muted">15 min · gratis</span>
+        </div>
+        <label>Bedrijfsnaam
+          <input name="company" required autocomplete="organization">
+        </label>
+        <div class="row">
+          <label>Jouw naam
+            <input name="name" required autocomplete="name">
+          </label>
+          <label>Functie
+            <input name="role" placeholder="bv. engineer, inkoop" autocomplete="organization-title">
+          </label>
+        </div>
+        <div class="row">
+          <label>E-mail
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label>Telefoon
+            <input type="tel" name="phone" required autocomplete="tel">
+          </label>
+        </div>
+        <label>Voorkeurstijd
+          <input name="slot" id="slotField" placeholder="Kies een tijd hierboven of typ een tijd" readonly>
+        </label>
+        <label>Waar wil je het over hebben?
+          <textarea name="topic" rows="3" placeholder="Bijv. 500 dakventilators, tekening beschikbaar…"></textarea>
+        </label>
+        <button type="submit" class="btn btn--solid btn--lg btn--block">
+          Plan afspraak →
+        </button>
+        <p class="apptform__note">
+          Liever nu bellen? <a href="tel:+31000000000">010 - 000 00 00</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT + KAART ==================== -->
+  <section class="contact">
+    <div class="container contact__grid">
+      <div>
+        <p class="kicker kicker--dark">§ 07 · Kom langs</p>
+        <h2>De koffie<br>staat klaar.</h2>
+        <address class="contact__addr">
+          <strong>STAALFORM Metaalbewerking B.V.</strong><br>
+          Voorbeeldstraat 1<br>
+          3000 AA Rotterdam
+        </address>
+        <p class="contact__lines">
+          <a href="tel:+31000000000">010 - 000 00 00</a><br>
+          <a href="mailto:hallo@staalform.nl">hallo@staalform.nl</a>
+        </p>
+        <p class="contact__hours">
+          <strong>Werkplaats geopend</strong><br>
+          Ma–Do 07:00–16:30 · Vrij 07:00–14:00
+        </p>
+      </div>
+      <div class="mapart" aria-hidden="true">
+        <svg viewBox="0 0 400 300" width="100%" height="100%">
+          <defs>
+            <pattern id="mapgrid" width="24" height="24" patternUnits="userSpaceOnUse">
+              <path d="M24 0 H0 V24" fill="none" stroke="#c9cfd8" stroke-width=".7"/>
+            </pattern>
+          </defs>
+          <rect width="400" height="300" fill="#eef1f5"/>
+          <rect width="400" height="300" fill="url(#mapgrid)"/>
+          <path d="M-10 130 C 90 90, 190 210, 300 130 S 430 60, 430 90" stroke="#b8c3d0" stroke-width="20" fill="none"/>
+          <path d="M-10 130 C 90 90, 190 210, 300 130 S 430 60, 430 90" stroke="#f7f9fc" stroke-width="4" stroke-dasharray="10 10" fill="none"/>
+          <path d="M60 -10 C 60 80, 180 90, 180 170 S 80 260, 80 320" stroke="#b8c3d0" stroke-width="14" fill="none"/>
+          <rect x="140" y="40" width="50" height="40" fill="#dfe4ec"/>
+          <rect x="220" y="180" width="70" height="60" fill="#dfe4ec"/>
+          <rect x="70" y="200" width="40" height="55" fill="#dfe4ec"/>
+          <g transform="translate(200 145)">
+            <circle r="46" fill="var(--accent)" opacity=".18"/>
+            <circle r="26" fill="var(--accent)" opacity=".28"/>
+            <circle r="12" fill="var(--accent)"/>
+            <circle r="12" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          </g>
+          <text x="220" y="150" font-family="var(--font-sans)" font-size="12" fill="var(--ink)" font-weight="700">HIER</text>
+        </svg>
+        <a href="https://maps.google.com" class="mapart__link" target="_blank" rel="noopener">Open in Google Maps →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container foot__grid">
+    <div>
+      <a class="wordmark wordmark--light" href="#top">
+        <svg width="28" height="28" viewBox="0 0 40 40"><rect x="2" y="2" width="36" height="36" rx="8" fill="var(--paper)"/><path d="M10 28 L20 12 L30 28 Z" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round"/><circle cx="20" cy="22" r="2.5" fill="var(--accent)"/></svg>
+        <span>STAAL<span class="wordmark__thin">FORM</span></span>
+      </a>
+      <p class="foot__tag">Plaatbewerking &amp; maatwerk in metaal.<br>Rotterdam · sinds 1996.</p>
+    </div>
+    <nav aria-label="Footer">
+      <p class="foot__hdr">Site</p>
+      <a href="#oplossingen">Oplossingen</a>
+      <a href="#capaciteit">Capaciteit</a>
+      <a href="#sectoren">Sectoren</a>
+      <a href="#proces">Proces</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div>
+      <p class="foot__hdr">Contact</p>
+      <a href="tel:+31000000000">010 - 000 00 00</a><br>
+      <a href="mailto:hallo@staalform.nl">hallo@staalform.nl</a><br>
+      <span>Voorbeeldstraat 1<br>3000 AA Rotterdam</span>
+    </div>
+    <div>
+      <p class="foot__hdr">Klaar om te starten?</p>
+      <a href="#afspraak" class="btn btn--solid">Plan afspraak →</a>
+    </div>
+  </div>
+  <div class="container foot__base">
+    <span>© <span id="yr">2026</span> STAALFORM Metaalbewerking B.V.</span>
+    <span>KvK 00000000 · BTW NL000000000B01</span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
