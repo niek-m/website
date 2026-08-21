@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Baanrace Challenge — win de prijs</title>
+<meta name="description" content="Ontwijk de obstakels op drie banen, haal een high score en maak kans op de prijs.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="page-header">
+    <h1>Baanrace Challenge</h1>
+    <p class="subtitle">Ontwijk de obstakels, haal de hoogste score, win de prijs.</p>
+  </header>
+
+  <div class="game-card">
+
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-label">Score</span>
+        <span class="hud-value" id="hud-score">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">High score</span>
+        <span class="hud-value" id="hud-highscore">0</span>
+      </div>
+    </div>
+
+    <div class="stage" id="stage">
+      <canvas id="game-canvas" width="360" height="560" aria-label="Speelveld van de baanrace game"></canvas>
+
+      <!-- Start overlay -->
+      <div class="overlay" id="overlay-start">
+        <h2>Klaar voor de start?</h2>
+        <p>Wissel van baan en ontwijk de obstakels. Hoe langer je overleeft, hoe hoger je score.</p>
+        <p class="controls-hint">
+          <strong>Desktop:</strong> pijltjestoetsen of A / D<br>
+          <strong>Mobiel:</strong> tik links of rechts van de auto
+        </p>
+        <button class="btn btn-primary" id="btn-start">Start spel</button>
+      </div>
+
+      <!-- Game over / entry overlay -->
+      <div class="overlay hidden" id="overlay-gameover">
+        <h2>Botsing!</h2>
+        <p class="final-score">Jouw score: <span id="final-score">0</span></p>
+        <p class="new-record hidden" id="new-record">Nieuw persoonlijk record!</p>
+
+        <form id="entry-form" class="entry-form" novalidate>
+          <p class="entry-intro">Vul je e-mailadres in om met deze score mee te doen aan de prijsvraag.</p>
+
+          <label for="entry-name" class="field-label">Naam (optioneel)</label>
+          <input type="text" id="entry-name" name="entry-name" autocomplete="name" maxlength="80">
+
+          <label for="entry-email" class="field-label">E-mailadres *</label>
+          <input type="email" id="entry-email" name="entry-email" autocomplete="email" required maxlength="160">
+
+          <!-- Honeypot: onzichtbaar voor mensen, bots vullen dit vaak automatisch in -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consent-label">
+            <input type="checkbox" id="entry-consent" name="entry-consent" required>
+            <span>Ik ga akkoord met de <a href="#voorwaarden" id="link-voorwaarden">actievoorwaarden</a> en het gebruik van mijn e-mailadres voor deze prijsvraag. *</span>
+          </label>
+
+          <p class="form-error hidden" id="form-error"></p>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="btn-submit">Doe mee met de prijsvraag</button>
+            <button type="button" class="btn btn-secondary" id="btn-again">Speel opnieuw (zonder mee te doen)</button>
+          </div>
+        </form>
+
+        <div class="confirmation hidden" id="confirmation">
+          <p>Bedankt! Je inzending met score <strong id="confirmation-score">0</strong> is genoteerd op naam van <strong id="confirmation-email"></strong>.</p>
+          <button class="btn btn-secondary" id="btn-restart-after-entry">Speel nog een keer</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Touch controls voor mobiel -->
+    <div class="touch-controls" id="touch-controls" aria-hidden="true">
+      <button class="touch-btn" id="touch-left" aria-label="Naar links">◀</button>
+      <button class="touch-btn" id="touch-right" aria-label="Naar rechts">▶</button>
+    </div>
+
+  </div>
+
+  <section class="terms" id="voorwaarden">
+    <h2>Actievoorwaarden (concept — nog aan te vullen)</h2>
+    <ul>
+      <li><strong>Prijs:</strong> [PLACEHOLDER — omschrijf hier de prijs en de waarde].</li>
+      <li><strong>Actieperiode:</strong> [PLACEHOLDER — startdatum] t/m [PLACEHOLDER — einddatum].</li>
+      <li><strong>Deelname:</strong> één inzending per e-mailadres telt mee; bij meerdere inzendingen geldt de hoogste score.</li>
+      <li><strong>Winnaar:</strong> de deelnemer met de hoogste score aan het einde van de actieperiode wint. Bij een gelijke stand beslist [PLACEHOLDER — bv. de vroegste inzending].</li>
+      <li><strong>Bekendmaking:</strong> de winnaar wordt uiterlijk [PLACEHOLDER] per e-mail op de hoogte gebracht.</li>
+      <li><strong>Organisator:</strong> [PLACEHOLDER — bedrijfsnaam en contactgegevens], verwerkingsverantwoordelijke voor de opgegeven persoonsgegevens.</li>
+      <li><strong>Privacy:</strong> je e-mailadres wordt uitsluitend gebruikt om je op de hoogte te brengen van deze actie en wordt niet gedeeld met derden. Zie [PLACEHOLDER — link naar privacyverklaring] voor meer informatie. Je kunt je gegevens laten verwijderen door contact op te nemen via [PLACEHOLDER — e-mailadres].</li>
+    </ul>
+    <p class="terms-note">Deze tekst is een placeholder en moet vervangen worden door de definitieve, juridisch gecontroleerde actievoorwaarden voordat de actie live gaat.</p>
+  </section>
+
+  <p class="tech-note" id="tech-note">
+    Let op (voor de beheerder): scores en inzendingen worden momenteel alleen lokaal in de browser bewaard.
+    Zie de <code>SUBMIT_ENDPOINT</code>-constante bovenaan <code>script.js</code> en de README in deze map
+    om dit te koppelen aan een echte backend voordat de actie livegaat.
+  </p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
