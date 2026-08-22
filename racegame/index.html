@@ -3,114 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Baanrace Challenge — win de prijs</title>
-<meta name="description" content="Ontwijk de obstakels op drie banen, haal een high score en maak kans op de prijs.">
+<title>SchaalX — Tijd om te schakelen</title>
+<meta name="description" content="Kies je baan, ontwijk de obstakels en race naar de hoogste score. Doe mee met je zakelijke e-mailadres.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="page">
 
-  <header class="page-header">
-    <h1>Baanrace Challenge</h1>
-    <p class="subtitle">Ontwijk de obstakels, haal de hoogste score, win de prijs.</p>
+  <header class="top-nav">
+    <div class="logo">Schaal<span class="logo-x">X</span></div>
+    <a href="#voorwaarden" class="nav-link">Spelregels &amp; prijs</a>
   </header>
 
-  <div class="game-card">
+  <!-- ============ VIEW 1: landing + e-mail gate ============ -->
+  <section class="view" id="view-landing">
+    <div class="hero-grid">
 
-    <div class="hud">
-      <div class="hud-item">
-        <span class="hud-label">Score</span>
-        <span class="hud-value" id="hud-score">0</span>
-      </div>
-      <div class="hud-item">
-        <span class="hud-label">High score</span>
-        <span class="hud-value" id="hud-highscore">0</span>
-      </div>
-    </div>
-
-    <div class="stage" id="stage">
-      <canvas id="game-canvas" width="360" height="560" aria-label="Speelveld van de baanrace game"></canvas>
-
-      <!-- Start overlay -->
-      <div class="overlay" id="overlay-start">
-        <h2>Klaar voor de start?</h2>
-        <p>Wissel van baan en ontwijk de obstakels. Hoe langer je overleeft, hoe hoger je score.</p>
-        <p class="controls-hint">
-          <strong>Desktop:</strong> pijltjestoetsen of A / D<br>
-          <strong>Mobiel:</strong> tik links of rechts van de auto
+      <div class="hero-copy">
+        <p class="eyebrow" id="eyebrow-period">SCHAALX ACTIE &middot; [PLACEHOLDER ACTIEPERIODE]</p>
+        <h1>Tijd om te <span class="accent-grad">schakelen</span>.</h1>
+        <p class="hero-sub">
+          Neem plaats achter het stuur, kies je baan en ontwijk alles wat je
+          jaarplan vertraagt. De hoogste score wint
+          <strong>het boek &ldquo;Van SEO naar GEO&rdquo; van Martin van Kranenburg</strong>.
         </p>
-        <button class="btn btn-primary" id="btn-start">Start spel</button>
-      </div>
 
-      <!-- Game over / entry overlay -->
-      <div class="overlay hidden" id="overlay-gameover">
-        <h2>Botsing!</h2>
-        <p class="final-score">Jouw score: <span id="final-score">0</span></p>
-        <p class="new-record hidden" id="new-record">Nieuw persoonlijk record!</p>
-
-        <form id="entry-form" class="entry-form" novalidate>
-          <p class="entry-intro">Vul je e-mailadres in om met deze score mee te doen aan de prijsvraag.</p>
-
-          <label for="entry-name" class="field-label">Naam (optioneel)</label>
-          <input type="text" id="entry-name" name="entry-name" autocomplete="name" maxlength="80">
-
-          <label for="entry-email" class="field-label">E-mailadres *</label>
-          <input type="email" id="entry-email" name="entry-email" autocomplete="email" required maxlength="160">
-
-          <!-- Honeypot: onzichtbaar voor mensen, bots vullen dit vaak automatisch in -->
-          <div class="hp-field" aria-hidden="true">
-            <label for="website">Website</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">banen om te schakelen</span>
           </div>
-
-          <label class="consent-label">
-            <input type="checkbox" id="entry-consent" name="entry-consent" required>
-            <span>Ik ga akkoord met de <a href="#voorwaarden" id="link-voorwaarden">actievoorwaarden</a> en het gebruik van mijn e-mailadres voor deze prijsvraag. *</span>
-          </label>
-
-          <p class="form-error hidden" id="form-error"></p>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="btn-submit">Doe mee met de prijsvraag</button>
-            <button type="button" class="btn btn-secondary" id="btn-again">Speel opnieuw (zonder mee te doen)</button>
+          <div class="stat">
+            <span class="stat-num">&infin;</span>
+            <span class="stat-label">pogingen</span>
           </div>
-        </form>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">prijs te winnen</span>
+          </div>
+        </div>
 
-        <div class="confirmation hidden" id="confirmation">
-          <p>Bedankt! Je inzending met score <strong id="confirmation-score">0</strong> is genoteerd op naam van <strong id="confirmation-email"></strong>.</p>
-          <button class="btn btn-secondary" id="btn-restart-after-entry">Speel nog een keer</button>
+        <div class="leaderboard-card">
+          <h2>Ranglijst</h2>
+          <ol class="leaderboard-list" id="leaderboard-list"></ol>
+          <p class="leaderboard-empty hidden" id="leaderboard-empty">
+            Nog geen scores. Wees de eerste die de eindstreep haalt.
+          </p>
+          <p class="leaderboard-note">
+            DEMO &mdash; dit scorebord wordt nu nog per browser bijgehouden en is
+            nog niet centraal gedeeld tussen deelnemers. Zie de README voor wat
+            daarvoor nog nodig is.
+          </p>
         </div>
       </div>
 
-    </div>
+      <div class="gate-card">
+        <h2>Doe mee met je e-mailadres</h2>
+        <p class="gate-intro">
+          We sturen je een inloglink. Zo weten we zeker dat de score bij een
+          echte deelnemer hoort &mdash; en weten we wie we kunnen mailen als je wint.
+        </p>
 
-    <!-- Touch controls voor mobiel -->
-    <div class="touch-controls" id="touch-controls" aria-hidden="true">
-      <button class="touch-btn" id="touch-left" aria-label="Naar links">◀</button>
-      <button class="touch-btn" id="touch-right" aria-label="Naar rechts">▶</button>
-    </div>
+        <form id="gate-form" class="gate-form" novalidate>
+          <label for="gate-email" class="field-label">Zakelijk e-mailadres</label>
+          <input type="email" id="gate-email" name="gate-email" placeholder="naam@bedrijf.nl" required autocomplete="email" maxlength="160">
 
-  </div>
+          <!-- Honeypot: onzichtbaar voor mensen, bots vullen dit vaak automatisch in -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="gate-website">Website</label>
+            <input type="text" id="gate-website" name="gate-website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consent-label">
+            <input type="checkbox" id="gate-consent" required>
+            <span>Ik ga akkoord met de <a href="#voorwaarden">actievoorwaarden</a> en het gebruik van mijn e-mailadres voor deze actie. *</span>
+          </label>
+
+          <p class="form-error hidden" id="gate-error"></p>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-gate-submit">Stuur mij de startlink</button>
+          <p class="gate-fineprint">Je e-mailadres gebruiken we alleen voor deze actie en het contact over de prijs.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ VIEW 2: "check je inbox" (gesimuleerd) ============ -->
+  <section class="view hidden" id="view-checkinbox">
+    <div class="narrow-card">
+      <h2>Check je inbox</h2>
+      <p>We hebben een inloglink gestuurd naar <strong id="checkinbox-email"></strong>.</p>
+
+      <div class="sim-note">
+        <p>
+          <strong>Simulatiemodus:</strong> er is nog geen echte backend
+          gekoppeld, dus er wordt geen echte e-mail verstuurd. Klik hieronder
+          om te doen alsof je op de link in je mail hebt geklikt.
+        </p>
+        <button class="btn btn-primary btn-block" id="btn-sim-verify">Simuleer: link geopend &rarr;</button>
+      </div>
+
+      <button class="btn btn-secondary btn-block" id="btn-gate-back">Ander e-mailadres gebruiken</button>
+    </div>
+  </section>
+
+  <!-- ============ VIEW 3: het spel ============ -->
+  <section class="view hidden" id="view-game">
+    <div class="game-card">
+
+      <div class="hud">
+        <div class="hud-item">
+          <span class="hud-label">Score</span>
+          <span class="hud-value" id="hud-score">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">High score</span>
+          <span class="hud-value" id="hud-highscore">0</span>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <canvas id="game-canvas" width="360" height="560" aria-label="Speelveld van de baanrace game"></canvas>
+
+        <!-- Start overlay -->
+        <div class="overlay" id="overlay-start">
+          <h2>Klaar voor de start?</h2>
+          <p>Wissel van baan en ontwijk de obstakels. Hoe langer je overleeft, hoe hoger je score.</p>
+          <p class="controls-hint">
+            <strong>Desktop:</strong> pijltjestoetsen of A / D<br>
+            <strong>Mobiel:</strong> tik links of rechts van de auto
+          </p>
+          <button class="btn btn-primary" id="btn-start">Start spel</button>
+        </div>
+
+        <!-- Game over overlay -->
+        <div class="overlay hidden" id="overlay-gameover">
+          <h2>Botsing!</h2>
+          <p class="final-score">Je haalde <span id="final-score">0</span> punten.</p>
+          <p class="new-record hidden" id="new-record">Nieuw persoonlijk record!</p>
+          <p class="leaderboard-status" id="leaderboard-status"></p>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" id="btn-again">Opnieuw rijden</button>
+            <button class="btn btn-secondary" id="btn-view-leaderboard">Naar de ranglijst</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Touch controls voor mobiel -->
+      <div class="touch-controls" id="touch-controls" aria-hidden="true">
+        <button class="touch-btn" id="touch-left" aria-label="Naar links">&#9664;</button>
+        <button class="touch-btn" id="touch-right" aria-label="Naar rechts">&#9654;</button>
+      </div>
+
+    </div>
+  </section>
 
   <section class="terms" id="voorwaarden">
-    <h2>Actievoorwaarden (concept — nog aan te vullen)</h2>
+    <h2>Actievoorwaarden (concept &mdash; nog aan te vullen)</h2>
     <ul>
-      <li><strong>Prijs:</strong> [PLACEHOLDER — omschrijf hier de prijs en de waarde].</li>
-      <li><strong>Actieperiode:</strong> [PLACEHOLDER — startdatum] t/m [PLACEHOLDER — einddatum].</li>
-      <li><strong>Deelname:</strong> één inzending per e-mailadres telt mee; bij meerdere inzendingen geldt de hoogste score.</li>
-      <li><strong>Winnaar:</strong> de deelnemer met de hoogste score aan het einde van de actieperiode wint. Bij een gelijke stand beslist [PLACEHOLDER — bv. de vroegste inzending].</li>
+      <li><strong>Prijs:</strong> het boek &ldquo;Van SEO naar GEO&rdquo; van Martin van Kranenburg.</li>
+      <li><strong>Actieperiode:</strong> [PLACEHOLDER &mdash; startdatum] t/m [PLACEHOLDER &mdash; einddatum].</li>
+      <li><strong>Deelname:</strong> één inzending per e-mailadres telt mee; bij meerdere pogingen geldt de hoogste score.</li>
+      <li><strong>Winnaar:</strong> de deelnemer met de hoogste score aan het einde van de actieperiode wint. Bij een gelijke stand beslist [PLACEHOLDER &mdash; bv. de vroegste inzending].</li>
       <li><strong>Bekendmaking:</strong> de winnaar wordt uiterlijk [PLACEHOLDER] per e-mail op de hoogte gebracht.</li>
-      <li><strong>Organisator:</strong> [PLACEHOLDER — bedrijfsnaam en contactgegevens], verwerkingsverantwoordelijke voor de opgegeven persoonsgegevens.</li>
-      <li><strong>Privacy:</strong> je e-mailadres wordt uitsluitend gebruikt om je op de hoogte te brengen van deze actie en wordt niet gedeeld met derden. Zie [PLACEHOLDER — link naar privacyverklaring] voor meer informatie. Je kunt je gegevens laten verwijderen door contact op te nemen via [PLACEHOLDER — e-mailadres].</li>
+      <li><strong>Organisator:</strong> SchaalX, [PLACEHOLDER &mdash; adres/KVK/contactgegevens], verwerkingsverantwoordelijke voor de opgegeven persoonsgegevens.</li>
+      <li><strong>Privacy:</strong> je e-mailadres wordt uitsluitend gebruikt om je op de hoogte te brengen van deze actie en wordt niet gedeeld met derden. Zie [PLACEHOLDER &mdash; link naar privacyverklaring] voor meer informatie. Je kunt je gegevens laten verwijderen door contact op te nemen via [PLACEHOLDER &mdash; e-mailadres].</li>
     </ul>
-    <p class="terms-note">Deze tekst is een placeholder en moet vervangen worden door de definitieve, juridisch gecontroleerde actievoorwaarden voordat de actie live gaat.</p>
+    <p class="terms-note">De prijs staat vast; de overige tekst is nog een placeholder en moet vervangen worden door de definitieve, juridisch gecontroleerde actievoorwaarden voordat de actie live gaat.</p>
   </section>
 
   <p class="tech-note" id="tech-note">
-    Let op (voor de beheerder): scores en inzendingen worden momenteel alleen lokaal in de browser bewaard.
-    Zie de <code>SUBMIT_ENDPOINT</code>-constante bovenaan <code>script.js</code> en de README in deze map
-    om dit te koppelen aan een echte backend voordat de actie livegaat.
+    Let op (voor de beheerder): de inloglink en het scorebord zijn nu een
+    <strong>simulatie</strong> zonder echte backend &mdash; alles wordt alleen lokaal
+    in de browser bewaard. Zie <code>racegame/README.md</code> voor wat er
+    nodig is (backend, database, e-mailservice, hostingkeuze) om dit echt te
+    maken voordat de actie livegaat.
   </p>
 
 </div>
